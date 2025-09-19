@@ -27,17 +27,17 @@
             <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
             <p class="card-text text-muted mb-3">{{ user.email }}</p>
             <div class="mt-auto card-actions">
-              <a class="action text-decoration-none" [routerLink]="['/user', user.id]">
+              <a class="action text-decoration-none" [routerLink]="['/user', user._id]">
                 <i class="bi bi-search"></i>
                 <span>Ver detalle</span>
               </a>
-              <button class="action btn btn-link p-0 text-secondary" (click)="goToUpdate(user.id)">
+              <button class="action btn btn-link p-0 text-secondary" (click)="goToUpdate(user._id)">
                 <i class="bi bi-arrow-repeat"></i>
                 <span>Actualizar</span>
               </button>
               <button
                 class="action btn btn-link p-0 text-secondary"
-                (click)="confirmDelete(user.id, user.first_name)"
+                (click)="confirmDelete(user._id, user.first_name)"
               >
                 <i class="bi bi-trash"></i>
                 <span>Borrar</span>

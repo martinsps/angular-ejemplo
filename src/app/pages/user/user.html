@@ -1,0 +1,47 @@
+<div class="container py-4" *ngIf="!loading(); else loadingTpl">
+  <div class="row g-4" *ngIf="!error(); else errorTpl">
+    <div class="col-12" *ngIf="!user()">
+      <div class="alert alert-warning">Usuario no encontrado.</div>
+    </div>
+
+    <ng-container *ngIf="user() as u">
+      <div class="col-12 col-lg-5 d-flex justify-content-center">
+        <img class="avatar" [src]="u.image" [alt]="u.first_name + ' ' + u.last_name" />
+      </div>
+      <div class="col-12 col-lg-7">
+        <div class="row">
+          <div class="col-12 col-lg-11">
+            <h2 class="display-6 fw-semibold">{{ u.first_name }}</h2>
+            <h3 class="h3 text-muted">{{ u.last_name }}</h3>
+            <hr />
+            <p class="mb-4"><strong>Email:</strong> {{ u.email }}</p>
+
+            <div class="btn-group btn-group-lg" role="group">
+              <button type="button" class="btn btn-outline-danger" (click)="confirmDelete()">
+                Eliminar
+              </button>
+              <button type="button" class="btn btn-outline-secondary" (click)="goToUpdate()">
+                Actualizar
+              </button>
+              <button type="button" class="btn btn-outline-dark" (click)="goBack()">
+                Volver a listado
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #loadingTpl>
+  <div class="container py-4">
+    <div class="alert alert-info">Cargando usuario...</div>
+  </div>
+</ng-template>
+
+<ng-template #errorTpl>
+  <div class="col-12">
+    <div class="alert alert-danger">{{ error() }}</div>
+  </div>
+</ng-template>

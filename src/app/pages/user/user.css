@@ -1,0 +1,15 @@
+.avatar {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #1f4af1;
+  padding: 8px;
+}
+
+@media (max-width: 576px) {
+  .avatar {
+    width: 240px;
+    height: 240px;
+  }
+}

@@ -38,18 +38,16 @@ export class Home implements OnInit {
     });
   }
 
-  goToUpdate(userId: number): void {
+  goToUpdate(userId: string): void {
     this.router.navigate(['/updateuser', userId]);
   }
 
-  confirmDelete(userId: number, firstName: string): void {
+  confirmDelete(userId: string, firstName: string): void {
     const ok = confirm(`¿Seguro que deseas eliminar al usuario ${firstName}?`);
     if (!ok) return;
-    const user = this.users().find((u) => u.id === userId);
-    const identifier = user && user._id ? user._id : userId;
-    this.usersService.deleteUser(identifier).subscribe({
+    this.usersService.deleteUser(userId).subscribe({
       next: () => {
-        this.users.set(this.users().filter((u) => u.id !== userId));
+        this.users.set(this.users().filter((u) => u._id !== userId));
       },
       error: () => {
         alert('Error eliminando el usuario.');

@@ -1,0 +1,29 @@
+.navbar-brand {
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.navbar-brand:hover {
+  opacity: 0.8;
+}
+
+.nav-link {
+  color: #6c757d !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #495057 !important;
+}
+
+.nav-link.active {
+  color: #dc3545 !important;
+  font-weight: 600;
+}
+
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

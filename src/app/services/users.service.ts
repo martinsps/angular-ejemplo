@@ -15,19 +15,19 @@ export class UsersService {
       .pipe(map((resp) => resp.results));
   }
 
-  getUserById(id: number): Observable<User> {
-    return this.http.get<User>(`${this.apiBase}/users/${id}`);
+  getUserById(_id: string): Observable<User> {
+    return this.http.get<User>(`${this.apiBase}/users/${_id}`);
   }
 
-  createUser(payload: Omit<User, 'id'>): Observable<User> {
+  createUser(payload: Omit<User, '_id'>): Observable<User> {
     return this.http.post<User>(`${this.apiBase}/users`, payload);
   }
 
-  updateUser(id: number, payload: Partial<Omit<User, 'id'>>): Observable<User> {
-    return this.http.put<User>(`${this.apiBase}/users/${id}`, payload);
+  updateUser(_id: string, payload: Partial<Omit<User, '_id'>>): Observable<User> {
+    return this.http.put<User>(`${this.apiBase}/users/${_id}`, payload);
   }
 
-  deleteUser(id: number | string): Observable<unknown> {
-    return this.http.delete(`${this.apiBase}/users/${id}`);
+  deleteUser(_id: string): Observable<unknown> {
+    return this.http.delete(`${this.apiBase}/users/${_id}`);
   }
 }

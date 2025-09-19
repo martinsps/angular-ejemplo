@@ -1,59 +1,84 @@
-# AngularEjemplo
+# 📱 Angular Users CRUD App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.1.
+Una aplicación Angular completa que implementa un sistema CRUD (Create, Read, Update, Delete) de usuarios conectándose a una API externa. La aplicación permite gestionar usuarios con un diseño moderno y responsivo usando Bootstrap.
 
-## Development server
+## 🎯 Características Principales
 
-To start a local development server, run:
+- **Listado de usuarios** en formato grid con paginación
+- **Vista detalle** de cada usuario individual
+- **Formulario de creación** de nuevos usuarios
+- **Formulario de actualización** reutilizable
+- **Eliminación de usuarios** con confirmación
+- **Validaciones completas** en formularios
+- **Diseño responsivo** con Bootstrap 5
+- **Conexión a API externa** (https://peticiones.online/api/users)
+
+## 🏗️ Estructura del Proyecto
+
+```
+src/app/
+├── components/
+│   └── navbar/           # Componente de navegación
+├── pages/
+│   ├── home/            # Listado de usuarios (GRID)
+│   ├── user/            # Detalle de usuario individual
+│   └── new-user/        # Formulario (crear/actualizar)
+├── services/
+│   └── users.service.ts # Servicio para comunicación con API
+├── types/
+│   └── user.ts          # Interfaces TypeScript
+├── app.routes.ts        # Configuración de rutas
+└── app.config.ts        # Configuración de la aplicación
+```
+
+## 🚀 Cómo Ejecutar el Proyecto
+
+### 1. Instalar dependencias
+
+```bash
+npm install
+```
+
+### 2. Iniciar el servidor de desarrollo
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### 3. Abrir en el navegador
 
-## Code scaffolding
+Navega a `http://localhost:4200/` para ver la aplicación.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📋 Rutas Disponibles
 
-```bash
-ng generate component component-name
-```
+- **`/home`** - Listado completo de usuarios
+- **`/user/:id`** - Detalle de usuario específico
+- **`/newuser`** - Formulario para crear usuario
+- **`/updateuser/:id`** - Formulario para actualizar usuario
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🛠️ Tecnologías Utilizadas
 
-```bash
-ng generate --help
-```
+- **Angular 20+** - Framework principal
+- **TypeScript** - Lenguaje de programación
+- **Bootstrap 5.3.3** - Framework CSS
+- **Bootstrap Icons** - Iconografía
+- **RxJS** - Programación reactiva
+- **Angular Forms** - Formularios reactivos
 
-## Building
+## 📦 Comandos Disponibles
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Desarrollo
 
 ```bash
-ng test
+ng serve          # Servidor de desarrollo
+ng build          # Compilar para producción
+ng test           # Ejecutar tests unitarios
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### Generación de código
 
 ```bash
-ng e2e
+ng generate component nombre-componente
+ng generate service nombre-servicio
+ng generate interface nombre-interfaz
 ```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

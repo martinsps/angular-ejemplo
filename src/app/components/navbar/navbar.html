@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" [routerLink]="['/home']">
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="me-2"
+      >
+        <path d="M16 2L4 6l12 4 12-4-12-4z" fill="#DD0031" />
+        <path d="M4 6v12l12 4V10L4 6z" fill="#C3002F" />
+        <path d="M28 6v12l-12 4V10l12-4z" fill="#C3002F" />
+        <path d="M16 22l12-4v12l-12 4V22z" fill="#DD0031" />
+        <path d="M4 18v12l12 4V22L4 18z" fill="#DD0031" />
+      </svg>
+      <span class="fw-bold text-dark">Angular</span>
+    </a>
+
+    <div class="navbar-nav ms-auto">
+      <a
+        class="nav-link"
+        [routerLink]="['/home']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Home
+      </a>
+      <a class="nav-link" [routerLink]="['/newuser']" routerLinkActive="active"> Nuevo Usuario </a>
+    </div>
+  </div>
+</nav>
